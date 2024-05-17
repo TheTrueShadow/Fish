@@ -76,8 +76,11 @@
                         window.location.href = 'https://youtu.be/psSfNqvgO6E';
                     }, 1000);
                 } else if (code === '355658') {
-                    alert('They are watching. Wait for part 2.');
-                    message.textContent = '';
+                    message.textContent = 'Success';
+                    setTimeout(() => {
+                        alert('They are watching. Wait for part 2.');
+                        message.textContent = '';
+                    }, 1000);
                 } else {
                     message.textContent = 'Incorrect code. Please try again.';
                 }
