@@ -27,18 +27,35 @@
             padding: 10px;
             font-size: 16px;
             margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: #555;
+            color: #fff;
+            caret-color: #fff; /* Sets the color of the blinking cursor */
+        }
+        input::placeholder {
+            color: #bbb;
         }
         button {
             padding: 10px 20px;
             font-size: 16px;
             margin-top: 10px;
+            background-color: #666;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #777;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <h1>Enter Code</h1>
-        <input type="text" id="code" placeholder="Enter the code">
+        <input type="text" id="code" placeholder="Enter the code" autofocus>
         <button onclick="checkCode()">Submit</button>
     </div>
 
