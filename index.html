@@ -70,19 +70,23 @@
             message.textContent = 'Checking code...';
             
             setTimeout(() => {
-                if (code === 'PHASE ONE') {
+                const encoded = btoa(code);
+                if (encoded === 'UEhBU0UgT05F') { // 'PHASE ONE' encoded in Base64
                     message.textContent = 'Success';
                     setTimeout(() => {
                         window.location.href = 'https://youtu.be/psSfNqvgO6E';
                     }, 1000);
-                } else if (code === '355658') {
+                } else if (encoded === 'MzU1NjU4') { // '355658' encoded in Base64
                     message.textContent = 'Success';
                     setTimeout(() => {
                         alert('They are watching. Wait for part 2.');
                         message.textContent = '';
                     }, 1000);
                 } else {
-                    message.textContent = 'Incorrect code. Please try again.';
+                    message.textContent = 'Incorrect code. Redirecting...';
+                    setTimeout(() => {
+                        window.location.href = 'about:blank';
+                    }, 1000);
                 }
             }, 1000);
         }
