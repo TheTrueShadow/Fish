@@ -50,6 +50,9 @@
         button:hover {
             background-color: #777;
         }
+        #message {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -57,18 +60,28 @@
         <h1>Enter Code</h1>
         <input type="text" id="code" placeholder="Enter the code" autofocus>
         <button onclick="checkCode()">Submit</button>
+        <div id="message"></div>
     </div>
 
     <script>
         function checkCode() {
             const code = document.getElementById('code').value.toUpperCase();
-            if (code === 'PHASE ONE') {
-                window.location.href = 'https://youtu.be/psSfNqvgO6E';
-            } else if (code === '355658') {
-                alert('They are watching. Wait for part 2.');
-            } else {
-                alert('Incorrect code. Please try again.');
-            }
+            const message = document.getElementById('message');
+            message.textContent = 'Checking code...';
+            
+            setTimeout(() => {
+                if (code === 'PHASE ONE') {
+                    message.textContent = 'Success';
+                    setTimeout(() => {
+                        window.location.href = 'https://youtu.be/psSfNqvgO6E';
+                    }, 1000);
+                } else if (code === '355658') {
+                    alert('They are watching. Wait for part 2.');
+                    message.textContent = '';
+                } else {
+                    message.textContent = 'Incorrect code. Please try again.';
+                }
+            }, 1000);
         }
     </script>
 </body>
