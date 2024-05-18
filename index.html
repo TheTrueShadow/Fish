@@ -54,33 +54,37 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
-    <div id="container">
-        <h1>Enter Code</h1>
-        <input type="text" id="code" placeholder="Enter the code" autofocus>
-        <button onclick="checkCode()">Submit</button>
-        <div id="message"></div>
-    </div>
-
     <script>
+        function sendEmail() {
+            // Send an email notification
+            window.location.href = 'mailto:Epicgamer19890@gmail.com?subject=Code%20355658%20Entered&body=Phase%202%20is%20ready';
+        }
+
         function checkCode() {
             const code = document.getElementById('code').value.toUpperCase();
             const message = document.getElementById('message');
+            
+            if (!code.trim()) {
+                alert('Code cannot be blank');
+                return;
+            }
+            
             message.textContent = 'Checking code...';
             
             setTimeout(() => {
-                const encoded = btoa(code);
-                if (encoded === 'UEhBU0UgT05F') { // 'PHASE ONE' encoded in Base64
+                if (code === 'PHASE ONE') {
                     message.textContent = 'Success';
                     setTimeout(() => {
                         window.location.href = 'https://youtu.be/psSfNqvgO6E';
                     }, 1000);
-                } else if (encoded === 'MzU1NjU4') { // '355658' encoded in Base64
+                } else if (code === '355658') {
                     message.textContent = 'Success';
                     setTimeout(() => {
                         alert('They are watching. Wait for part 2.');
-                        message.textContent = '';
+                        sendEmail();
+                        setTimeout(() => {
+                            window.location.href = 'https://youtu.be/U0TJQGnTUxg?si=CU7MpsatZS26IkF4';
+                        }, 5000);
                     }, 1000);
                 } else {
                     message.textContent = 'Incorrect code. Redirecting...';
@@ -90,6 +94,20 @@
                 }
             }, 1000);
         }
+        
+        // Obfuscate the code to make it harder to find
+        const originalToString = Function.prototype.toString;
+        Function.prototype.toString = function() {
+            return 'function checkCode() { [native code] }';
+        };
     </script>
+</head>
+<body>
+    <div id="container">
+        <h1>Enter Code</h1>
+        <input type="text" id="code" placeholder="Enter the code" autofocus>
+        <button onclick="checkCode()">Submit</button>
+        <div id="message"></div>
+    </div>
 </body>
 </html>
