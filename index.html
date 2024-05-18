@@ -37,6 +37,13 @@
         input::placeholder {
             color: #bbb;
         }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #fff !important;
+        }
         button {
             padding: 10px 20px;
             font-size: 16px;
@@ -79,7 +86,7 @@
                         setTimeout(() => {
                             window.location.href = 'https://youtu.be/U0TJQGnTUxg?si=CU7MpsatZS26IkF4';
                         }, 5000);
-                    }, 1000);
+                    }, 0);
                 } else {
                     message.textContent = 'Incorrect code. Redirecting...';
                     setTimeout(() => {
@@ -99,7 +106,7 @@
 <body>
     <div id="container">
         <h1>Enter Code</h1>
-        <input type="text" id="code" placeholder="Enter the code" autofocus>
+        <input type="text" id="code" placeholder="Enter the code" autocomplete="off" autofocus>
         <button onclick="checkCode()">Submit</button>
         <div id="message"></div>
     </div>
