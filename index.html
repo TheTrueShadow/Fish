@@ -17,7 +17,6 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
-            position: relative; /* Add this line */
         }
         #container {
             text-align: center;
@@ -69,29 +68,12 @@
         #message {
             margin-top: 20px;
         }
-        #counter {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: #bbb;
-            font-size: 14px;
-        }
         /* Hidden copyright notice */
         #copyright {
             display: none;
         }
-
-        /* Media query for mobile */
-        @media only screen and (max-width: 600px) {
-            #container {
-                width: 90%;
-                max-width: none;
-            }
-        }
     </style>
     <script>
-        let counter = 0;
-
         function checkCode() {
             const code = document.getElementById('code').value.toUpperCase();
             const message = document.getElementById('message');
@@ -105,8 +87,6 @@
             
             setTimeout(() => {
                 if (code === 'PHASE ONE') {
-                    counter++;
-                    document.getElementById('counter').textContent = 'Counter: ' + counter;
                     message.textContent = 'Success';
                     setTimeout(() => {
                         window.location.href = 'https://youtu.be/psSfNqvgO6E';
@@ -142,6 +122,10 @@
         <button onclick="checkCode()">Submit</button>
         <div id="message"></div>
     </div>
-    <div id="counter">Counter: 0</div>
+    <div id="copyright">
+        &copy; 2024 godofshadows and TheTrueShadow. All rights reserved.
+        <br>Discord: godofshadows
+        <br>GitHub: TheTrueShadow
+    </div>
 </body>
 </html>
