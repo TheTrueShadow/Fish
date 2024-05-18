@@ -6,7 +6,88 @@
     <title>Code Authentication</title>
     <link rel="icon" href="https://icons.iconarchive.com/icons/icons8/windows-8/256/Food-Fish-icon.png" type="image/png">
     <style>
-        /* Your existing CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative; /* Add this line */
+        }
+        #container {
+            text-align: center;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background-color: #555;
+            color: #fff;
+            width: 100%;
+            box-sizing: border-box;
+            caret-color: #fff; /* Sets the color of the blinking cursor */
+        }
+        input::placeholder {
+            color: #bbb;
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover, 
+        input:-webkit-autofill:focus, 
+        input:-webkit-autofill:active {
+            transition: background-color 5000s ease-in-out 0s;
+            -webkit-text-fill-color: #fff !important;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            background-color: #666;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #777;
+        }
+        #message {
+            margin-top: 20px;
+        }
+        #counter {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #bbb;
+            font-size: 14px;
+        }
+        /* Hidden copyright notice */
+        #copyright {
+            display: none;
+        }
+
+        /* Media query for mobile */
+        @media only screen and (max-width: 600px) {
+            #container {
+                width: 90%;
+                max-width: none;
+            }
+        }
     </style>
     <script>
         let counter = 0;
