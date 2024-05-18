@@ -55,11 +55,6 @@
         }
     </style>
     <script>
-        function sendEmail() {
-            // Send an email notification
-            window.location.href = 'mailto:Epicgamer19890@gmail.com?subject=Code%20355658%20Entered&body=Phase%202%20is%20ready';
-        }
-
         function checkCode() {
             const code = document.getElementById('code').value.toUpperCase();
             const message = document.getElementById('message');
@@ -81,7 +76,6 @@
                     message.textContent = 'Success';
                     setTimeout(() => {
                         alert('They are watching. Wait for part 2.');
-                        sendEmail();
                         setTimeout(() => {
                             window.location.href = 'https://youtu.be/U0TJQGnTUxg?si=CU7MpsatZS26IkF4';
                         }, 5000);
